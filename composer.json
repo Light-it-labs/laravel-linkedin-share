@@ -1,0 +1,32 @@
+{
+    "name": "lightit/linkedin-share",
+    "description": "This package allows you to easily share content on Likedin, using the v2 API.",
+    "keywords": ["linkedin", "linkedin share", "linkedin API v2"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Alan Brande",
+            "email": "alanbrande@lightit.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lightit\\LinkedinShare\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lightit\\LinkedinShare\\LinkedinShareServiceProvider"
+            ],
+            "aliases": {
+                "LinkedinShare": "Lightit\\LinkedinShare\\Facades\\LinkedinShare"
+            }
+        }
+    }
+}
