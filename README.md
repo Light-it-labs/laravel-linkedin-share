@@ -33,3 +33,9 @@ LinkedinShare::shareArticle($code, $url, $text)
 ```
 LinkedinShare::getAccessToken($code)
 ```
+
+## About Lightit
+[Light-it](https://lightit.io) is a software development company with offices in Uruguay and Paraguay. 
+
+## License
+This project and the Laravel framework are open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
