@@ -97,10 +97,10 @@ class LinkedinShare
         );
     }
 
-    public function shareImage($code, $image, $text)
+    public function shareImage($code, $image, $text, $access_type = 'code')
     {
         $client = new Client();
-        $access_token = $this->getAccessToken($code);
+        $access_token = ($access_type === 'code') ? $this->getAccessToken($code) : $code;
         $personURN = $this->getProfile($access_token)['id'];
         $uploadObject = $this->registerUpload($access_token, $personURN);
         $asset = $uploadObject['value']['asset'];
@@ -142,11 +142,11 @@ class LinkedinShare
 
     }
 
-    public function shareArticle($code, $url, $text)
+    public function shareArticle($code, $url, $text, $access_type = 'code')
     {
         $client = new Client();
-        $access_token = $this->getAccessToken($code);
-        $personURN = $this->getProfile($access_token)['id'];
+	    $access_token = ($access_type === 'code') ? $this->getAccessToken($code) : $code;
+	    $personURN = $this->getProfile($access_token)['id'];
 
 
         $client->request('POST', 'https://api.linkedin.com/v2/ugcPosts', [
@@ -182,11 +182,11 @@ class LinkedinShare
 
     }
 
-    public function shareNone($code, $text)
+    public function shareNone($code, $text, $access_type = 'code')
     {
         $client = new Client();
-        $access_token = $this->getAccessToken($code);
-        $personURN = $this->getProfile($access_token)['id'];
+	    $access_token = ($access_type === 'code') ? $this->getAccessToken($code) : $code;
+	    $personURN = $this->getProfile($access_token)['id'];
 
 
         $client->request('POST', 'https://api.linkedin.com/v2/ugcPosts', [
