@@ -33,17 +33,23 @@ You will need the user authentication code ($code) to be able to share content i
 
 ### Sharing text
 ```
-LinkedinShare::shareNone($code, $text)
+LinkedinShare::shareNone($code, $text);
 ```
 
 ### Sharing images
 ```
-LinkedinShare::shareImage($code, $image, $text)
+LinkedinShare::shareImage($code, $image, $text);
 ```
 
 ### Sharing links
 ```
-LinkedinShare::shareArticle($code, $url, $text)
+LinkedinShare::shareArticle($code, $url, $text);
+```
+## Sharing content with access_token
+If you prefere to share content using the user access_token, you should include an optional parameter to the share functions.
+Example:
+```
+LinkedinShare::shareNone($token, $text, 'token');
 ```
 
 ## Extra functionality
