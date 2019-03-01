@@ -49,7 +49,7 @@ LinkedinShare::shareArticle($code, $url, $text);
 If you prefere to share content using the user access_token, you should include an optional parameter to the share functions.
 Example:
 ```
-LinkedinShare::shareNone($token, $text, 'token');
+LinkedinShare::shareNone($access_token, $text, 'access_token');
 ```
 
 ## Extra functionality
